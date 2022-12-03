@@ -13,7 +13,7 @@ import {
 const PRODUCT_CONTEXT = createContext();
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
-
+  console.log(state);
   useEffect(() => {
     dispatch({ type: actionTypes.FETCHING_START });
     fetch("http://localhost:5000/products")
