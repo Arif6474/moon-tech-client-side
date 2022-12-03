@@ -42,7 +42,7 @@ export const productReducer = (state, action) => {
             
             return {
                 ...state,
-               cart : [...state.cart, action.payload._id]
+               cart : state.cart.filter(product => product._id !== action.payload._id) 
             }
         default:
         return state;
